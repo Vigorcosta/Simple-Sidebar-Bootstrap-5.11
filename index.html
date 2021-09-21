@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Simple Sidebar - Start Bootstrap Template 1.0</title>
+
+<!-- Favicon-->
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+<!-- Biblioteca-->
+<link rel="stylesheet" href="custom/bootstrap.min.css">
+<script src="custom/bootstrap.min.js"></script>
+</head>
+
+<body>
+        
+		
+<div class="d-flex" id="wrapper">
+
+<!-- Sidebar-->
+<div class="bg-primary" id="sidebar-wrapper">
+                
+				<!-- Tilulo de Menu Lateral-->
+				<div class="sidebar-heading bg-primary bg-gradient text-center text-white">Administrador</div>
+                
+				<!-- Menu Lateral-->			
+				<div class="list-group list-group-flush">
+                    
+					<a class="list-group-item p-3 menu" href="#!">Atalho</a>
+                    <a class="list-group-item p-3 menu" href="#!">Atalho</a>
+                    <a class="list-group-item p-3 menu" href="#!">Atalho</a>
+                    <a class="list-group-item p-3 menu" href="#!">Atalho</a>
+                    <a class="list-group-item p-3 menu" href="#!">Atalho</a>
+                    <a class="list-group-item p-3 menu" href="#!">Atalho</a>
+                </div>
+</div>
+	
+	
+<!-- Menu Lateral-->
+	
+<div id="page-content-wrapper">
+
+<!--Navegador-->
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-dark bg-gradient ">
+
+<!--Botão Esconder-->	
+<div class="container-fluid">
+                        
+	<button class="btn btn-primary" id="sidebarToggle">&#8647; Esconder</button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+	
+	
+<!--Menu de opção-->   
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+			 
+                       <li class="nav-item dropdown">
+                       <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opção</a>
+                       
+					   <div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                       <a class="dropdown-item" href="#!">Atalho</a>
+                       <a class="dropdown-item" href="#!">Atalho</a>
+                       <div class="dropdown-divider"></div>
+                       <a class="dropdown-item" href="#!">Atalho</a>
+                       </div>
+                       
+			 		   </li>
+         </ul>
+</div>
+
+</div>
+</nav>
+                
+	
+<!-- SISTEMA DE BUSCA-->
+	
+<div class="container-fluid">
+
+<div class="d-flex justify-content-end mt-2">
+	
+<div class="input-group esp">
+  <input type="text" class="form-control" placeholder="Pesquisa" aria-label="Pesquisa" aria-describedby="button-addon2">
+  <button class="btn btn-primary bg-gradient" type="button" id="button-addon2">Buscar</button>
+</div>	
+	
+</div>	
+	
+	
+</div>	
+
+
+	
+	
+	
+<!-- Página-->
+	
+<div class="container-fluid">
+	
+	
+	
+   
+	<h1 class="mt-4">Simple Sidebar</h1>
+    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
+    
+	<p>Make sure to keep all page content within the <code>#page-content-wrapper</code>
+    . The top navbar is optional, and just for demonstration. Just create an element with the
+    <code>#sidebarToggle</code>ID which will toggle the menu when clicked. </p>
+
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+
+<style>
+.esp{width: 300px;}	
+.menu{background-color: #0d6efd; color: white; margin-left: 18px; /*margin-right: 18px;*/}	
+.menu:hover{background-color: white; color:black;}	
+	
+#wrapper {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  transition: margin 0.25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
+
+
+</style>
+
+<script>
+window.addEventListener('DOMContentLoaded', event => {
+
+    // Toggle the side navigation
+    const sidebarToggle = document.body.querySelector('#sidebarToggle');
+    if (sidebarToggle) {
+        // Uncomment Below to persist sidebar toggle between refreshes
+        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+        //     document.body.classList.toggle('sb-sidenav-toggled');
+        // }
+        sidebarToggle.addEventListener('click', event => {
+            event.preventDefault();
+            document.body.classList.toggle('sb-sidenav-toggled');
+            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+        });
+    }
+
+});
+
+
+
+
+</script>
